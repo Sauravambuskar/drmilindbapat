@@ -6,7 +6,8 @@ const WHATSAPP_LINK = "https://wa.me/919822032496?text=Hello%20Dr.%20Bapat%2C%20
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <>
+      <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
           src="/images/hero-medical.jpg"
@@ -104,21 +105,23 @@ const HeroSection = () => {
           ))}
         </motion.div>
       </div>
+    </section>
 
       {/* Doctor Banner Strip */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.9 }}
-        className="absolute bottom-0 left-0 right-0 z-10"
-      >
-        <img
-          src="/images/doctor-banner.jpg"
-          alt="Dr. Milind Bapat - Urology & Andrology, Expert Care for Men's Health & Wellness"
-          className="w-full h-auto object-cover max-h-[160px] sm:max-h-[200px] lg:max-h-[240px]"
-        />
-      </motion.div>
-    </section>
+      <div className="w-full">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+        >
+          <img
+            src="/images/doctor-banner.jpg"
+            alt="Dr. Milind Bapat - Urology & Andrology, Expert Care for Men's Health & Wellness"
+            className="w-full h-auto object-cover"
+          />
+        </motion.div>
+      </div>
+    </>
   );
 };
 
