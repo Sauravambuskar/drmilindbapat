@@ -7,6 +7,7 @@ const footerLinks = [
   { label: "Services", href: "/services" },
   { label: "Doctor", href: "/doctor" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -16,10 +17,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <p className="font-display text-xl font-bold mb-2">Dr. Milind Bapat</p>
+            <img src="/images/logo.png" alt="Dr. Milind Bapat Logo" className="h-14 w-auto mb-3 brightness-0 invert" />
             <p className="text-sm text-primary-foreground/60">
-              MS (Surg), DNB (Urology)<br />
-              Consultant Urologist & Andrologist
+              Trusted Urology & Andrology care in Pune since 1992.
             </p>
           </div>
 

@@ -10,8 +10,8 @@ const HeroSection = () => {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-1.jpg"
-          alt="Dr. Milind Bapat - Best Urologist in Pune"
+          src="/images/hero-medical.jpg"
+          alt="Modern urology clinic - Dr. Milind Bapat, Best Urologist in Pune"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/40" />
