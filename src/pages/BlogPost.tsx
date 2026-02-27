@@ -53,6 +53,14 @@ const BlogPost = () => {
               {post.title}
             </h1>
 
+            <div className="rounded-2xl overflow-hidden my-8 aspect-[2/1]">
+              <img
+                src={post.image}
+                alt={post.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             <div className="flex items-center gap-4 text-sm text-muted-foreground mb-8 pb-8 border-b border-border">
               <div className="flex items-center gap-1">
                 <Calendar className="w-4 h-4" />

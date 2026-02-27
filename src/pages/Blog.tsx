@@ -37,9 +37,17 @@ const Blog = () => {
               >
                 <Link
                   to={`/blog/${post.id}`}
-                  className="block bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-shadow group h-full"
+                  className="block bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-all group h-full"
                 >
-                  <div className="p-6 flex flex-col h-full">
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow">
                     <span className="inline-block px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-medium mb-4 w-fit">
                       {post.category}
                     </span>

@@ -7,6 +7,7 @@ export const blogPosts = [
   {
     id: "kidney-stones-prevention",
     title: "Kidney Stones: Causes, Prevention & Modern Treatment Options",
+    image: "/images/blog-kidney.jpg",
     excerpt: "Kidney stones are one of the most common urological conditions affecting millions worldwide. Learn about causes, dietary changes, and advanced treatments like laser lithotripsy that make stone removal minimally invasive.",
     date: "February 15, 2026",
     readTime: "6 min read",
@@ -40,6 +41,7 @@ At our clinic, Dr. Milind Bapat uses the latest minimally invasive techniques to
   {
     id: "prostate-health-men-over-50",
     title: "Prostate Health: What Every Man Over 50 Should Know",
+    image: "/images/blog-prostate.jpg",
     excerpt: "Benign Prostatic Hyperplasia (BPH) affects over 50% of men over 50. Understand the symptoms, when to seek help, and the latest surgical and non-surgical treatments available.",
     date: "January 28, 2026",
     readTime: "7 min read",
@@ -91,6 +93,7 @@ Dr. Milind Bapat has over 30 years of experience treating prostate conditions an
   {
     id: "understanding-uti",
     title: "Understanding Urinary Tract Infections: Causes & Treatment",
+    image: "/images/blog-uti.jpg",
     excerpt: "UTIs are among the most common infections, especially in women. Learn about causes, risk factors, antibiotic resistance concerns, and preventive measures to keep infections at bay.",
     date: "January 10, 2026",
     readTime: "5 min read",
@@ -135,6 +138,7 @@ If you experience burning urination, cloudy/bloody urine, or lower abdominal pai
   {
     id: "male-infertility-guide",
     title: "Male Infertility: A Complete Guide to Diagnosis & Treatment",
+    image: "/images/blog-infertility.jpg",
     excerpt: "Male factor infertility contributes to nearly 50% of all infertility cases. Explore the diagnostic workup, common causes, and advanced treatments including microsurgical sperm retrieval.",
     date: "December 18, 2025",
     readTime: "8 min read",
@@ -175,6 +179,7 @@ Dr. Milind Bapat specializes in male infertility evaluation and microsurgical sp
   {
     id: "erectile-dysfunction-treatments",
     title: "Erectile Dysfunction: Breaking the Stigma & Finding Solutions",
+    image: "/images/blog-ed.jpg",
     excerpt: "ED affects 1 in 5 men over 40 but remains under-discussed. Learn about the medical causes, relationship between ED and heart disease, and the full spectrum of treatment options.",
     date: "November 25, 2025",
     readTime: "6 min read",
@@ -213,6 +218,7 @@ ED is a medical condition that deserves proper evaluation and treatment. Dr. Mil
   {
     id: "blood-in-urine-hematuria",
     title: "Blood in Urine (Hematuria): When Should You Worry?",
+    image: "/images/blog-hematuria.jpg",
     excerpt: "Seeing blood in your urine can be alarming. While sometimes benign, hematuria can also signal serious conditions like bladder or kidney cancer. Know when to see a urologist immediately.",
     date: "November 5, 2025",
     readTime: "5 min read",
@@ -289,9 +295,17 @@ const BlogSection = () => {
             >
               <Link
                 to={`/blog/${post.id}`}
-                className="block bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-shadow group h-full"
+                className="block bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-all group h-full"
               >
-                <div className="p-6 flex flex-col h-full">
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
                   <span className="inline-block px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-medium mb-4 w-fit">
                     {post.category}
                   </span>
