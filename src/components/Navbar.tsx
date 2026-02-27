@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Doctor", href: "/doctor" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -23,13 +24,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-display font-bold text-lg">M</span>
-            </div>
-            <div className="hidden sm:block">
-              <p className="font-display font-semibold text-foreground text-lg leading-tight">Dr. Milind Bapat</p>
-              <p className="text-xs text-muted-foreground">Consultant Urologist & Andrologist</p>
-            </div>
+            <img src="/images/logo.png" alt="Dr. Milind Bapat Logo" className="h-12 w-auto" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
