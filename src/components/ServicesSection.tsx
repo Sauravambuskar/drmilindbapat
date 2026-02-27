@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Stethoscope, HeartPulse, ShieldAlert, MessageCircle } from "lucide-react";
+import { Stethoscope, HeartPulse, ShieldAlert, MessageCircle, Droplets, Pill, Microscope, Syringe, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_BASE = "https://wa.me/919822032496?text=";
@@ -9,7 +9,7 @@ const services = [
     icon: Stethoscope,
     title: "Urology Treatment",
     description:
-      "Comprehensive treatment for diseases and conditions affecting the urinary system including bladder, kidney, ureter, urethra, and adrenal glands. Specialist in urinary incontinence treatment.",
+      "Comprehensive treatment for diseases and conditions affecting the urinary system including bladder, kidney, ureter, urethra, and adrenal glands. Specialist in urinary incontinence, overactive bladder, and urethral stricture treatment.",
     image: "/images/hero-3.png",
   },
   {
@@ -21,10 +21,45 @@ const services = [
   },
   {
     icon: ShieldAlert,
-    title: "Kidney Cancer",
+    title: "Kidney Cancer Treatment",
     description:
-      "Specialized diagnosis and treatment of renal cell carcinoma and other kidney cancers. Advanced surgical techniques with focus on early detection and best possible outcomes.",
+      "Specialized diagnosis and treatment of renal cell carcinoma and other kidney cancers. Advanced surgical techniques with focus on early detection, nephron-sparing surgery, and best possible outcomes.",
     image: "/images/hero-6.jpg",
+  },
+  {
+    icon: Droplets,
+    title: "Kidney Stone Management",
+    description:
+      "Complete kidney stone care including ESWL (shock wave lithotripsy), ureteroscopy with laser lithotripsy, PCNL for large stones, and preventive counseling to reduce recurrence risk.",
+    image: "/images/hero-1.jpg",
+  },
+  {
+    icon: Pill,
+    title: "Prostate Disorders (BPH)",
+    description:
+      "Diagnosis and treatment of benign prostatic hyperplasia (BPH) including medical management, TURP, laser prostatectomy, and minimally invasive options like UroLift for improved urinary flow.",
+    image: "/images/hero-2.jpg",
+  },
+  {
+    icon: Microscope,
+    title: "Male Infertility & PESA/TESA",
+    description:
+      "Advanced evaluation and treatment of male infertility including hormonal therapy, varicocelectomy, microsurgical sperm retrieval (PESA/TESA/Micro-TESE), and assisted reproductive guidance.",
+    image: "/images/gallery-3.jpg",
+  },
+  {
+    icon: Syringe,
+    title: "Penile Prosthesis Surgery",
+    description:
+      "Expert penile implant surgery for men with erectile dysfunction who haven't responded to other treatments. High satisfaction rates (>90%) with both inflatable and semi-rigid prostheses.",
+    image: "/images/gallery-4.jpg",
+  },
+  {
+    icon: Activity,
+    title: "UTI & Bladder Conditions",
+    description:
+      "Comprehensive management of urinary tract infections, recurrent UTIs, interstitial cystitis, bladder cancer screening, and neurogenic bladder with evidence-based treatment protocols.",
+    image: "/images/gallery-5.jpg",
   },
 ];
 
@@ -42,23 +77,27 @@ const ServicesSection = () => {
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mt-2">
             Specialized Medical Services
           </h2>
+          <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+            Dr. Milind Bapat offers comprehensive urological and andrological services using the latest techniques and equipment, ensuring the best outcomes for every patient.
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
               className="bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-shadow group"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-44 overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
                 <div className="absolute bottom-4 left-4">
@@ -67,9 +106,9 @@ const ServicesSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">{service.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-4">
+              <div className="p-5">
+                <h3 className="font-display text-lg font-semibold text-foreground mb-2">{service.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">
                   {service.description}
                 </p>
                 <Button variant="ghost" size="sm" className="text-primary hover:text-primary p-0 h-auto" asChild>
