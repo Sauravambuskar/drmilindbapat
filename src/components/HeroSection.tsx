@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import { Phone, Calendar, Award } from "lucide-react";
+import { Phone, MessageCircle, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const WHATSAPP_LINK = "https://wa.me/919822032496?text=Hello%20Dr.%20Bapat%2C%20I%20would%20like%20to%20book%20an%20appointment.%20Please%20share%20available%20slots.";
 
 const HeroSection = () => {
   return (
@@ -46,8 +48,8 @@ const HeroSection = () => {
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="gap-2 text-base border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
-                <a href="#contact">
-                  <Calendar className="w-5 h-5" />
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-5 h-5" />
                   Book Appointment
                 </a>
               </Button>
