@@ -92,14 +92,12 @@ const DoctorSection = () => {
               transition={{ duration: 0.7 }}
               className="flex justify-center"
             >
-              <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/images/doctor.jpg"
-                  alt="Dr. Milind Bapat - Urologist in Pune"
-                  className="rounded-2xl w-full max-w-md shadow-2xl"
+                  src="/images/doctor-banner.jpg"
+                  alt="Dr. Milind Bapat - Urology & Andrology Expert"
+                  className="w-full h-auto rounded-2xl"
                 />
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/20 rounded-2xl -z-10" />
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-teal-glow/30 rounded-2xl -z-10" />
               </div>
             </motion.div>
           </div>

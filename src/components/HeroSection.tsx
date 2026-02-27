@@ -6,8 +6,7 @@ const WHATSAPP_LINK = "https://wa.me/919822032496?text=Hello%20Dr.%20Bapat%2C%20
 
 const HeroSection = () => {
   return (
-    <>
-      <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
           src="/images/hero-medical.jpg"
@@ -60,7 +59,6 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Stats */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,7 +84,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Trust Badges */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -106,22 +103,6 @@ const HeroSection = () => {
         </motion.div>
       </div>
     </section>
-
-      {/* Doctor Banner Strip */}
-      <div className="w-full">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-        >
-          <img
-            src="/images/doctor-banner.jpg"
-            alt="Dr. Milind Bapat - Urology & Andrology, Expert Care for Men's Health & Wellness"
-            className="w-full h-auto object-cover"
-          />
-        </motion.div>
-      </div>
-    </>
   );
 };
 
