@@ -4,6 +4,8 @@ import { Calendar, Clock, ArrowLeft, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import SEOHead from "@/components/SEOHead";
 import { blogPosts } from "@/components/BlogSection";
 
 const WHATSAPP_LINK = "https://wa.me/919822032496?text=Hello%20Dr.%20Bapat%2C%20I%20would%20like%20to%20book%20an%20appointment.%20Please%20share%20available%20slots.";
@@ -31,6 +33,13 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title={`${post.title} | Dr. Milind Bapat`}
+        description={post.excerpt}
+        keywords={`${post.category}, urology, dr milind bapat, pune, ${post.title.toLowerCase().split(' ').slice(0, 4).join(', ')}`}
+        canonical={`/blog/${post.id}`}
+        ogImage={post.image}
+      />
       <Navbar />
       <div className="pt-20" />
 
@@ -156,6 +165,7 @@ const BlogPost = () => {
       </section>
 
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };
