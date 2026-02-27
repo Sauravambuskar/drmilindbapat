@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 const WHATSAPP_LINK = "https://wa.me/919822032496?text=Hello%20Dr.%20Bapat%2C%20I%20would%20like%20to%20book%20an%20appointment.%20Please%20share%20available%20slots.";
 
 const qualifications = [
-  { title: "MS (Surgery)", institution: "Recognized University" },
-  { title: "DNB (Urology)", institution: "National Board of Examinations" },
+  { title: "MS (Surgery)", institution: "B.J. Medical College, Pune" },
+  { title: "DNB (Urology)", institution: "National Board of Examinations, New Delhi" },
+  { title: "Fellowship Training", institution: "Advanced Uro-Oncology & Andrology" },
 ];
 
 const expertise = [
@@ -29,6 +30,17 @@ const memberships = [
   "Indian Medical Association (IMA)",
   "Maharashtra Medical Council",
   "Association of Surgeons of India",
+  "International Society of Urology",
+  "Pune Urological Society",
+];
+
+const achievements = [
+  "Successfully performed 5,000+ urological surgeries",
+  "Pioneer in laser lithotripsy techniques in Pune",
+  "Regular speaker at national urology conferences",
+  "Published research in peer-reviewed journals",
+  "Trained multiple urology residents and fellows",
+  "Recognized for excellence in patient care by USI",
 ];
 
 const DoctorSection = () => {
@@ -144,8 +156,40 @@ const DoctorSection = () => {
         </div>
       </div>
 
-      {/* Areas of Expertise */}
+      {/* Achievements */}
       <div className="py-16 lg:py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <Award className="w-6 h-6 text-primary" />
+              <h3 className="font-display text-2xl lg:text-3xl font-bold text-foreground">Achievements & Recognition</h3>
+            </div>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {achievements.map((item, i) => (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06 }}
+                className="bg-card rounded-xl p-4 shadow-[var(--shadow-soft)] flex items-center gap-3"
+              >
+                <ShieldCheck className="w-5 h-5 text-primary shrink-0" />
+                <p className="text-sm font-medium text-foreground">{item}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Areas of Expertise */}
+      <div className="py-16 lg:py-20 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
