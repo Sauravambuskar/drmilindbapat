@@ -50,7 +50,7 @@ const HeroSection = () => {
                   Call Now
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="gap-2 text-base border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
+              <Button size="lg" className="gap-2 text-base" asChild>
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5" />
                   Book Appointment
