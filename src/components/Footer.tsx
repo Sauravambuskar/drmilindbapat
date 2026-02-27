@@ -1,4 +1,14 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Phone, MapPin } from "lucide-react";
+
+const footerLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Doctor", href: "/doctor" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Contact", href: "/contact" },
+];
 
 const Footer = () => {
   return (
@@ -16,14 +26,14 @@ const Footer = () => {
           <div className="space-y-3">
             <h4 className="font-display font-semibold text-sm uppercase tracking-wider text-teal-glow">Quick Links</h4>
             <div className="space-y-2">
-              {["Home", "About", "Services", "Doctor", "Gallery", "Contact"].map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
+              {footerLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
                   className="block text-sm text-primary-foreground/60 hover:text-teal-glow transition-colors"
                 >
-                  {link}
-                </a>
+                  {link.label}
+                </Link>
               ))}
             </div>
           </div>
