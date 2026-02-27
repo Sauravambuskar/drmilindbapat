@@ -1,0 +1,42 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: drmilindbapat-web
+  namespace: drmilindbapat
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-Frame-Options "SAMEORIGIN" always;
+      add_header X-Content-Type-Options "nosniff" always;
+      add_header X-XSS-Protection "1; mode=block" always;
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - drmilindbapat.in
+        - www.drmilindbapat.in
+      secretName: drmilindbapat-tls
+  rules:
+    - host: drmilindbapat.in
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: drmilindbapat-web
+                port:
+                  number: 80
+    - host: www.drmilindbapat.in
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: drmilindbapat-web
+                port:
+                  number: 80

@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  drmilindbapat-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: drmilindbapat-web-prod
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+    volumes:
+      - ./devops/nginx/ssl:/etc/nginx/ssl:ro
+    networks:
+      - web
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+        reservations:
+          cpus: "0.1"
+          memory: 64M
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  web:
+    driver: bridge
