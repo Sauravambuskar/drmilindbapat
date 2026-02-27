@@ -9,6 +9,8 @@ const images = [
   "/images/gallery-6.jpg",
   "/images/gallery-7.jpg",
   "/images/gallery-8.jpg",
+  "/images/gallery-9.jpg",
+  "/images/gallery-10.jpg",
 ];
 
 const GallerySection = () => {
@@ -27,22 +29,26 @@ const GallerySection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
           {images.map((src, i) => (
             <motion.div
               key={src}
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className={`rounded-xl overflow-hidden ${i === 0 || i === 5 ? "md:col-span-2 md:row-span-2" : ""}`}
+              transition={{ delay: i * 0.04, duration: 0.4 }}
+              className={`rounded-xl overflow-hidden group cursor-pointer relative ${
+                i === 0 ? "md:col-span-2 md:row-span-2" : 
+                i === 5 ? "md:col-span-2 lg:col-span-2 lg:row-span-2" : ""
+              }`}
             >
               <img
                 src={src}
-                alt={`Gallery image ${i + 1}`}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 min-h-[160px]"
+                alt={`Clinic gallery image ${i + 1}`}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 min-h-[160px]"
                 loading="lazy"
               />
+              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
             </motion.div>
           ))}
         </div>
