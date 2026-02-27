@@ -3,11 +3,19 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import SEOHead from "@/components/SEOHead";
 import { blogPosts } from "@/components/BlogSection";
 
 const Blog = () => {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Urology & Men's Health Blog | Dr. Milind Bapat Pune"
+        description="Read expert health articles on urology, andrology, kidney health, prostate care, male infertility, and men's health by Dr. Milind Bapat, senior urologist in Pune."
+        keywords="urology blog, men's health articles, kidney health tips, prostate care pune, male infertility blog, urologist blog pune"
+        canonical="/blog"
+      />
       <Navbar />
       <div className="pt-20" />
 
@@ -79,6 +87,7 @@ const Blog = () => {
       </section>
 
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };
