@@ -11,6 +11,17 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  e.preventDefault();
+  const id = href.replace("#", "");
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  } else if (href === "#home") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+};
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
@@ -18,7 +29,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#home" className="flex items-center gap-2">
+          <a href="#home" onClick={(e) => scrollToSection(e, "#home")} className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
               <span className="text-primary-foreground font-display font-bold text-lg">M</span>
             </div>
@@ -33,6 +44,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
                 className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
               >
                 {link.label}
@@ -65,7 +77,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => { scrollToSection(e, link.href); setOpen(false); }}
                 className="block py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
               >
                 {link.label}
