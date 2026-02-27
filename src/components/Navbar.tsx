@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const WHATSAPP_LINK = "https://wa.me/919822032496?text=Hello%20Dr.%20Bapat%2C%20I%20would%20like%20to%20book%20an%20appointment.%20Please%20share%20available%20slots.";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -48,8 +50,8 @@ const Navbar = () => {
 
           <div className="flex items-center gap-3">
             <Button size="sm" className="hidden md:flex gap-2" asChild>
-              <a href="tel:+918042757407">
-                <Phone className="w-4 h-4" />
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4" />
                 Book Appointment
               </a>
             </Button>
@@ -82,9 +84,9 @@ const Navbar = () => {
               </Link>
             ))}
             <Button size="sm" className="w-full mt-2 gap-2" asChild>
-              <a href="tel:+918042757407">
-                <Phone className="w-4 h-4" />
-                Call +91 8042757407
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4" />
+                Book Appointment
               </a>
             </Button>
           </div>

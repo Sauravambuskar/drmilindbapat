@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import { Stethoscope, HeartPulse, ShieldAlert, Phone } from "lucide-react";
+import { Stethoscope, HeartPulse, ShieldAlert, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const WHATSAPP_BASE = "https://wa.me/919822032496?text=";
 
 const services = [
   {
@@ -71,8 +73,8 @@ const ServicesSection = () => {
                   {service.description}
                 </p>
                 <Button variant="ghost" size="sm" className="text-primary hover:text-primary p-0 h-auto" asChild>
-                  <a href="tel:+918042757407" className="gap-2">
-                    <Phone className="w-4 h-4" />
+                  <a href={`${WHATSAPP_BASE}${encodeURIComponent(`Hello Dr. Bapat, I would like to book an appointment for ${service.title}. Please share available slots.`)}`} target="_blank" rel="noopener noreferrer" className="gap-2">
+                    <MessageCircle className="w-4 h-4" />
                     Book Appointment
                   </a>
                 </Button>
