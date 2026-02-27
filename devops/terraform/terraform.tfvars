@@ -1,0 +1,5 @@
+aws_region    = "ap-south-1"
+environment   = "production"
+domain_name   = "drmilindbapat.in"
+instance_type = "t3.micro"
+key_pair_name = "drmilindbapat-key"

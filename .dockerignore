@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+bun.lockb
+
+# Build output
+dist/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# DevOps (not needed in image context)
+devops/terraform/
+devops/k8s/
+*.md
+Jenkinsfile
+docker-compose*.yml
