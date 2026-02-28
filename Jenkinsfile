@@ -2,133 +2,80 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE    = 'drmilindbapat/website'
-        DOCKER_TAG      = "${env.BUILD_NUMBER}"
-        DOCKER_REGISTRY = 'docker.io'
-        DEPLOY_SERVER   = 'your-server-ip'
-        DEPLOY_USER     = 'deploy'
-        DOMAIN          = 'drmilindbapat.in'
+        DOCKER_IMAGE = "saurav225986/drmilindbapat:latest"
     }
 
-    options {
-        timeout(time: 30, unit: 'MINUTES')
-        disableConcurrentBuilds()
-        buildDiscarder(logRotator(numToKeepStr: '10'))
+    tools {
+        sonarQubeScanner 'SonarScanner'
     }
 
     stages {
+
         stage('Checkout') {
             steps {
-                checkout scm
-                echo "Branch: ${env.BRANCH_NAME}, Commit: ${env.GIT_COMMIT}"
+                git branch: 'main',
+                url: 'https://github.com/Sauravambuskar/drmilindbapat.git'
             }
         }
 
-        stage('Install Dependencies') {
+        stage('SonarQube Analysis') {
             steps {
-                sh 'npm install'
-            }
-        }
-
-        stage('Lint & Type Check') {
-            parallel {
-                stage('Lint') {
-                    steps {
-                        sh 'npm run lint || true'
-                    }
-                }
-                stage('Type Check') {
-                    steps {
-                        sh 'npx tsc --noEmit'
+                withSonarQubeEnv('SonarQube') {
+                    withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
+                        sh """
+                        sonar-scanner \
+                          -Dsonar.projectKey=drmilindbapat \
+                          -Dsonar.sources=. \
+                          -Dsonar.login=$SONAR_TOKEN
+                        """
                     }
                 }
             }
         }
 
-        stage('Test') {
+        stage('Quality Gate') {
             steps {
-                sh 'npm run test -- --run || true'
+                timeout(time: 2, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
             }
         }
 
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                sh 'npm run build'
-                archiveArtifacts artifacts: 'dist/**', fingerprint: true
+                sh "docker build -t $DOCKER_IMAGE ."
             }
         }
 
-        stage('Docker Build') {
-            steps {
-                sh """
-                    docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
-                    docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest
-                """
-            }
-        }
-
-        stage('Docker Push') {
-            when {
-                branch 'main'
-            }
+        stage('Login to Docker Hub') {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'docker-hub-credentials',
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
-                    sh """
-                        echo \$DOCKER_PASS | docker login -u \$DOCKER_USER --password-stdin
-                        docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
-                        docker push ${DOCKER_IMAGE}:latest
-                    """
+                    sh "echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin"
                 }
             }
         }
 
-        stage('Deploy to Staging') {
-            when {
-                branch 'develop'
-            }
+        stage('Push Image') {
             steps {
-                echo 'Deploying to staging...'
-                sh """
-                    ssh ${DEPLOY_USER}@${DEPLOY_SERVER} '
-                        cd /opt/drmilindbapat-staging &&
-                        docker-compose pull &&
-                        docker-compose up -d --force-recreate
-                    '
-                """
+                sh "docker push $DOCKER_IMAGE"
             }
         }
 
-        stage('Deploy to Production') {
-            when {
-                branch 'main'
-            }
+        stage('Deploy to Server') {
             steps {
-                input message: 'Deploy to production?', ok: 'Deploy'
-                echo 'Deploying to production...'
                 sh """
-                    ssh ${DEPLOY_USER}@${DEPLOY_SERVER} '
-                        cd /opt/drmilindbapat &&
-                        docker-compose -f docker-compose.prod.yml pull &&
-                        docker-compose -f docker-compose.prod.yml up -d --force-recreate
-                    '
+                ssh ubuntu@YOUR_SERVER_IP '
+                    docker pull $DOCKER_IMAGE &&
+                    docker stop drmilindbapat-web || true &&
+                    docker rm drmilindbapat-web || true &&
+                    docker run -d -p 80:80 --name drmilindbapat-web $DOCKER_IMAGE
+                '
                 """
             }
-        }
-    }
-
-    post {
-        success {
-            echo "✅ Build #${env.BUILD_NUMBER} succeeded"
-        }
-        failure {
-            echo "❌ Build #${env.BUILD_NUMBER} failed"
-        }
-        always {
-            cleanWs()
         }
     }
 }
