@@ -305,11 +305,6 @@ Already configured in `devops/k8s/ingress.yaml` with Let's Encrypt.
 | A    | www   | `<EC2_PUBLIC_IP>`      | 300  |
 | TXT  | @     | `v=spf1 ~all`         | 3600 |
 
-### Using Lovable (Current Setup)
-If using Lovable's built-in hosting:
-- A records point to `185.158.133.1`
-- Add TXT record `_lovable` with verification value
-
 ---
 
 ## Monitoring & Maintenance
