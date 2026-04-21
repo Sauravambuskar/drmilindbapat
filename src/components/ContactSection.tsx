@@ -73,8 +73,8 @@ const ContactSection = () => {
             {
               icon: Clock,
               title: "OPD Timings",
-              detail: "Mon, Wed, Fri: 1–4 PM",
-              sub: "Tue, Thu, Sat: 11 AM–12 PM (Jupiter Hospital)",
+              detail: "Mon, Wed, Fri: 12–4 PM",
+              sub: "Tue, Thu, Sat: By Appointment (Jupiter Hospital)",
             },
           ].map((item, i) => (
             <motion.div

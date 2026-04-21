@@ -239,13 +239,13 @@ const DoctorSection = () => {
               {
                 name: "TARA, Dr. Nakhare Clinic",
                 address: "3rd Floor, 301, Kanchan B-Wing, Above Maruti Showroom, Senapati Bapat Road, Shivajinagar, Pune",
-                timing: "Mon, Wed, Fri — 1 PM to 4 PM",
+                timing: "Mon, Wed, Fri — 12 PM to 4 PM",
                 mapLink: "https://maps.google.com/?q=18.521917874160355,73.8292696326971",
               },
               {
                 name: "Jupiter Hospital",
                 address: "Eastern Express Highway, Baner Road, Pune",
-                timing: "Tue, Thu, Sat — 11 AM to 12 PM",
+                timing: "By Appointment",
                 mapLink: "https://maps.google.com/?q=Jupiter+Hospital+Pune",
               },
             ].map((clinic, i) => (

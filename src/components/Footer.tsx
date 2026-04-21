@@ -94,8 +94,8 @@ const Footer = () => {
               <div className="flex items-start gap-2">
                 <Clock className="w-4 h-4 shrink-0 mt-0.5" />
                 <div>
-                  <p>Mon, Wed, Fri: 1–4 PM</p>
-                  <p>Tue, Thu, Sat: 11 AM–12 PM</p>
+                  <p>Mon, Wed, Fri: 12–4 PM</p>
+                  <p>Tue, Thu, Sat: By Appointment</p>
                   <p className="text-xs text-primary-foreground/40">(Jupiter Hospital)</p>
                 </div>
               </div>
