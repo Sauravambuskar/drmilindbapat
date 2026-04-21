@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Target, Eye, Heart, Users, Stethoscope, ShieldCheck } from "lucide-react";
+import drBapatImage from "@assets/image_1776804449357.png";
 
 const highlights = [
   "Consultant Urologist & Andrologist",
@@ -48,16 +49,13 @@ const AboutSection = () => {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)]">
+            <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] bg-card">
               <img
-                src="/images/hero-5.jpg"
-                alt="Dr. Milind Bapat at clinic"
-                className="w-full h-[450px] object-cover"
+                src={drBapatImage}
+                alt="What is Urology? - Dr. Milind Bapat, MS (Surg), DNB (Urology), Since 1992"
+                className="w-full h-auto object-contain"
+                data-testid="img-about-urology"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/80 to-transparent p-6">
-                <p className="text-primary-foreground font-display text-xl font-semibold">Dr. Milind Bapat</p>
-                <p className="text-primary-foreground/70 text-sm">MS (Surg), DNB (Urology) · Since 1992</p>
-              </div>
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary rounded-2xl -z-10" />
           </motion.div>
