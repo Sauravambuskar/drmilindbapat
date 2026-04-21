@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, Award, Shield, Users, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_LINK = "https://wa.me/919822032496?text=Hello%20Dr.%20Bapat%2C%20I%20would%20like%20to%20book%20an%20appointment.%20Please%20share%20available%20slots.";
@@ -70,17 +71,36 @@ const HeroSection = () => {
               { value: "20,000+", label: "Patients Treated", icon: Users },
               { value: "MS, DNB", label: "Qualifications", icon: Award },
               { value: "2", label: "Clinic Locations", icon: Shield },
-            ].map((stat) => (
-              <div key={stat.label} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
-                  <stat.icon className="w-5 h-5 text-teal-glow" />
+            ].map((stat) => {
+              const content = (
+                <>
+                  <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
+                    <stat.icon className="w-5 h-5 text-teal-glow" />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-display font-bold text-teal-glow">{stat.value}</p>
+                    <p className="text-xs text-primary-foreground/60">{stat.label}</p>
+                  </div>
+                </>
+              );
+              if (stat.label === "Clinic Locations") {
+                return (
+                  <Link
+                    key={stat.label}
+                    to="/contact"
+                    className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
+                    data-testid="link-clinic-locations"
+                  >
+                    {content}
+                  </Link>
+                );
+              }
+              return (
+                <div key={stat.label} className="flex items-center gap-3">
+                  {content}
                 </div>
-                <div>
-                  <p className="text-2xl font-display font-bold text-teal-glow">{stat.value}</p>
-                  <p className="text-xs text-primary-foreground/60">{stat.label}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </motion.div>
         </div>
 
