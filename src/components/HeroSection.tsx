@@ -67,7 +67,7 @@ const HeroSection = () => {
             className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-primary-foreground/15"
           >
             {[
-              { value: "30+", label: "Years Experience", icon: Clock },
+              { value: "35+", label: "Years Experience", icon: Clock },
               { value: "20,000+", label: "Patients Treated", icon: Users },
               { value: "MS, DNB", label: "Qualifications", icon: Award },
               { value: "2", label: "Clinic Locations", icon: Shield },

@@ -16,7 +16,7 @@ const whyChooseUs = [
   {
     icon: Stethoscope,
     title: "35+ Years Experience",
-    description: "Over over three decades of dedicated practice in urology and andrology with proven expertise.",
+    description: "Over three and a half decades of dedicated practice in urology and andrology with proven expertise.",
   },
   {
     icon: Heart,
@@ -73,7 +73,7 @@ const AboutSection = () => {
               Trusted Urology & Andrology Care in Pune
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Dr. Milind Bapat is one of the most reliable and respected Urologists in Shivajinagar, Pune. A practicing consulting Urosurgeon since 1992, he brings over three decades of experience specializing in all kinds of consultations related to Urology & Andrology.
+              Dr. Milind Bapat is one of the most reliable and respected Urologists in Shivajinagar, Pune. A practicing consulting Urosurgeon since 1992, he brings over three and a half decades of experience specializing in all kinds of consultations related to Urology & Andrology.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               We believe the patient–physician relationship is unique, confidential, and sacred. Our practice strives to maintain this philosophy while providing world-class urological care. Every patient receives personalized attention, thorough evaluation, and evidence-based treatment recommendations.
