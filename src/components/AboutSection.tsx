@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Target, Eye, Heart, Users, Stethoscope, ShieldCheck } from "lucide-react";
-import drBapatImage from "@assets/image_1776804738449.png";
+import drBapatImage from "@assets/image_1776805160967.png";
 
 const highlights = [
   "Consultant Urologist & Andrologist",
@@ -49,17 +49,22 @@ const AboutSection = () => {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] bg-card">
-              <img
-                src={drBapatImage}
-                alt="Dr. Milind Bapat - Best Urologist & Andrologist in Pune"
-                className="w-full h-[450px] object-cover object-top"
-                data-testid="img-about-doctor"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy via-navy/80 to-transparent p-6">
-                <p className="text-primary-foreground font-display text-2xl font-bold" data-testid="text-doctor-name">Dr. Milind Bapat</p>
-                <p className="text-teal-glow text-sm font-medium mt-1" data-testid="text-doctor-degree">MS (Surgery) · DNB (Urology)</p>
-                <p className="text-primary-foreground/80 text-xs mt-1">Consultant Urologist & Andrologist · Practicing since 1992</p>
+            <div className="rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] bg-gradient-to-br from-navy to-primary p-3 sm:p-4">
+              <div className="rounded-xl overflow-hidden bg-white">
+                <div className="aspect-[3/4] w-full bg-gradient-to-b from-secondary to-card flex items-center justify-center overflow-hidden">
+                  <img
+                    src={drBapatImage}
+                    alt="Dr. Milind Bapat - Best Urologist & Andrologist in Pune"
+                    className="w-full h-full object-contain"
+                    data-testid="img-about-doctor"
+                  />
+                </div>
+                <div className="bg-navy text-center p-5">
+                  <p className="text-primary-foreground font-display text-2xl font-bold" data-testid="text-doctor-name">Dr. Milind Bapat</p>
+                  <p className="text-teal-glow text-sm font-medium mt-1" data-testid="text-doctor-degree">MS (Surgery) · DNB (Urology)</p>
+                  <p className="text-primary-foreground/80 text-xs mt-1">Consultant Urologist & Andrologist</p>
+                  <p className="text-primary-foreground/60 text-xs mt-0.5">Practicing since 1992</p>
+                </div>
               </div>
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary rounded-2xl -z-10" />
