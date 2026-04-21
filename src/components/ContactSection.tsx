@@ -6,7 +6,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "How do I book an appointment with Dr. Milind Bapat?",
-    a: "You can book an appointment by calling +91 8042757407, sending a WhatsApp message to +91 9822032496, or visiting the clinic directly during OPD hours.",
+    a: "You can book an appointment by calling +91 9822032496, sending a WhatsApp message to +91 9822032496, or visiting the clinic directly during OPD hours.",
   },
   {
     q: "What are the consultation fees?",
@@ -52,9 +52,9 @@ const ContactSection = () => {
             {
               icon: Phone,
               title: "Call Us",
-              detail: "+91 8042757407",
+              detail: "+91 9822032496",
               sub: "Available during clinic hours",
-              href: "tel:+918042757407",
+              href: "tel:+919822032496",
             },
             {
               icon: MessageCircle,

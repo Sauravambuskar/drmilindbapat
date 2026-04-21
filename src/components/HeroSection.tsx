@@ -45,7 +45,7 @@ const HeroSection = () => {
 
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="gap-2 text-base" asChild>
-                <a href="tel:+918042757407">
+                <a href="tel:+919822032496">
                   <Phone className="w-5 h-5" />
                   Call Now
                 </a>

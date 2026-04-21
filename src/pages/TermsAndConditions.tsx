@@ -38,7 +38,7 @@ const TermsAndConditions = () => {
             <h2 className="font-display text-xl font-semibold text-foreground">6. Contact Information</h2>
             <p>For any queries regarding these terms, please contact:</p>
             <ul className="list-disc pl-6 space-y-1">
-              <li>Phone: +91 8042757407</li>
+              <li>Phone: +91 9822032496</li>
               <li>Clinic: TARA, Dr. Nakhare Clinic, Senapati Bapat Road, Shivajinagar, Pune</li>
               <li>WhatsApp: +91 9822032496</li>
             </ul>

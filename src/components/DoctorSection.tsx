@@ -77,7 +77,7 @@ const DoctorSection = () => {
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="gap-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
-                  <a href="tel:+918042757407">
+                  <a href="tel:+919822032496">
                     <Phone className="w-5 h-5" />
                     Call Now
                   </a>
