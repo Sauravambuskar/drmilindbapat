@@ -65,24 +65,24 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-20 lg:py-28 bg-secondary">
+    <section id="services" className="py-12 sm:py-16 lg:py-28 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 lg:mb-16 px-2"
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Services</span>
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mt-2">
+          <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">Our Services</span>
+          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mt-2 leading-tight break-words">
             Specialized Medical Services
           </h2>
-          <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground mt-3 max-w-2xl mx-auto leading-relaxed">
             Dr. Milind Bapat offers comprehensive urological and andrological services using the latest techniques and equipment, ensuring the best outcomes for every patient.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
