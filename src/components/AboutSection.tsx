@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Target, Eye, Heart, Users, Stethoscope, ShieldCheck } from "lucide-react";
-import drBapatImage from "@assets/image_1776804449357.png";
+import drBapatImage from "@assets/image_1776804738449.png";
 
 const highlights = [
   "Consultant Urologist & Andrologist",
