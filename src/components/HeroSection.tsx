@@ -41,7 +41,7 @@ const HeroSection = () => {
             </p>
 
             <p className="text-sm text-primary-foreground/60 mb-8 max-w-lg">
-              MS (Surgery) · DNB (Urology) · Consultant at Jupiter Hospital & TARA Clinic, Shivajinagar, Pune
+              MS (Surgery) · DNB (Urology) · OPD at TARA Clinic · Consultant at MJM Hospital (Ghole Road), Ratna Memorial Hospital & Jupiter Hospital, Pune
             </p>
 
             <div className="flex flex-wrap gap-4">

@@ -8,7 +8,7 @@ const highlights = [
   "Practicing since 1992",
   "Expert in minimally invasive procedures",
   "Patient-centric approach",
-  "Available at TARA Clinic & Jupiter Hospital",
+  "OPD at TARA Clinic · Consultant at MJM, Ratna Memorial & Jupiter Hospital",
   "20,000+ patients treated successfully",
   "Advanced laser & laparoscopic surgery",
 ];

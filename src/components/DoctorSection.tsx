@@ -236,17 +236,29 @@ const DoctorSection = () => {
             <h3 className="font-display text-2xl lg:text-3xl font-bold text-foreground">Clinic Locations & Timings</h3>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
-                name: "TARA, Dr. Nakhare Clinic",
+                name: "TARA, Dr. Nakhare Clinic (OPD)",
                 address: "3rd Floor, 301, Kanchan B-Wing, Above Maruti Showroom, Senapati Bapat Road, Shivajinagar, Pune",
                 timing: "Mon, Wed, Fri — 12 PM to 4 PM",
                 mapLink: "https://maps.google.com/?q=18.521917874160355,73.8292696326971",
               },
               {
-                name: "Jupiter Hospital",
-                address: "Eastern Express Highway, Baner Road, Pune",
+                name: "MJM Hospital (Consultant)",
+                address: "Ghole Road, Shivajinagar, Pune",
+                timing: "By Appointment",
+                mapLink: "https://maps.google.com/?q=MJM+Hospital+Ghole+Road+Pune",
+              },
+              {
+                name: "Ratna Memorial Hospital (Consultant)",
+                address: "Senapati Bapat Road, Pune",
+                timing: "By Appointment",
+                mapLink: "https://maps.google.com/?q=Ratna+Memorial+Hospital+Pune",
+              },
+              {
+                name: "Jupiter Hospital (Consultant)",
+                address: "Baner, Pune",
                 timing: "By Appointment",
                 mapLink: "https://maps.google.com/?q=Jupiter+Hospital+Pune",
               },
