@@ -67,7 +67,7 @@ const HeroSection = () => {
           >
             {[
               { value: "30+", label: "Years Experience", icon: Clock },
-              { value: "10,000+", label: "Patients Treated", icon: Users },
+              { value: "20,000+", label: "Patients Treated", icon: Users },
               { value: "MS, DNB", label: "Qualifications", icon: Award },
               { value: "2", label: "Clinic Locations", icon: Shield },
             ].map((stat) => (

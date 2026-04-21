@@ -8,7 +8,7 @@ const highlights = [
   "Expert in minimally invasive procedures",
   "Patient-centric approach",
   "Available at TARA Clinic & Jupiter Hospital",
-  "10,000+ patients treated successfully",
+  "20,000+ patients treated successfully",
   "Advanced laser & laparoscopic surgery",
 ];
 
@@ -31,7 +31,7 @@ const whyChooseUs = [
   {
     icon: Users,
     title: "Trusted by Thousands",
-    description: "Over 10,000 patients trust Dr. Bapat for their urological and andrological care.",
+    description: "Over 20,000 patients trust Dr. Bapat for their urological and andrological care.",
   },
 ];
 
