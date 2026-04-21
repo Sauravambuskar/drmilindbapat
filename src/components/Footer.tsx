@@ -30,7 +30,7 @@ const Footer = () => {
           <div>
             <img src="/images/logo.png" alt="Dr. Milind Bapat Logo" className="h-14 w-auto mb-3 brightness-0 invert" />
             <p className="text-sm text-primary-foreground/60 mb-4">
-              Trusted Urology & Andrology care in Pune since 1992. Over 30 years of excellence in patient care, advanced surgical techniques, and compassionate medicine.
+              Trusted Urology & Andrology care in Pune since 1992. Over 35 years of excellence in patient care, advanced surgical techniques, and compassionate medicine.
             </p>
             <a
               href="https://wa.me/919822032496"

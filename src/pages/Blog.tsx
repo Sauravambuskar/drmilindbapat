@@ -31,7 +31,7 @@ const Blog = () => {
               Expert Health Articles
             </h1>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-              Trusted insights on urology, andrology, and men's health from Dr. Milind Bapat — over 30 years of clinical experience.
+              Trusted insights on urology, andrology, and men's health from Dr. Milind Bapat — over 35 years of clinical experience.
             </p>
           </motion.div>
 

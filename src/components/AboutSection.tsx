@@ -15,8 +15,8 @@ const highlights = [
 const whyChooseUs = [
   {
     icon: Stethoscope,
-    title: "30+ Years Experience",
-    description: "Over three decades of dedicated practice in urology and andrology with proven expertise.",
+    title: "35+ Years Experience",
+    description: "Over over three decades of dedicated practice in urology and andrology with proven expertise.",
   },
   {
     icon: Heart,

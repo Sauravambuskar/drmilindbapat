@@ -88,7 +88,7 @@ Don't wait until symptoms become severe. Consult a urologist if:
 3. **Minimally Invasive Procedures** – UroLift, Rezūm water vapor therapy
 4. **Surgical Options** – TURP (Transurethral Resection of the Prostate), laser prostatectomy
 
-Dr. Milind Bapat has over 30 years of experience treating prostate conditions and will recommend the most appropriate treatment based on your specific situation.`,
+Dr. Milind Bapat has over 35 years of experience treating prostate conditions and will recommend the most appropriate treatment based on your specific situation.`,
   },
   {
     id: "understanding-uti",

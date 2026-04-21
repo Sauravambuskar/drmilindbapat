@@ -25,7 +25,7 @@ const HeroSection = () => {
           >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-primary-foreground text-sm font-medium mb-6">
               <Award className="w-4 h-4" />
-              30+ Years of Excellence in Urology
+              35+ Years of Excellence in Urology
             </span>
 
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4">
