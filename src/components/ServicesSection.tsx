@@ -28,9 +28,9 @@ const services = [
   },
   {
     icon: Droplets,
-    title: "Kidney Stone Management",
+    title: "Kidney Stone Management (RIRS with Laser)",
     description:
-      "Complete kidney stone care including ESWL (shock wave lithotripsy), ureteroscopy with laser lithotripsy, PCNL for large stones, and preventive counseling to reduce recurrence risk.",
+      "Complete kidney stone care including ESWL (shock wave lithotripsy) and RIRS (Retrograde Intrarenal Surgery) with laser, ureteroscopy with laser lithotripsy, PCNL for large stones, and preventive counseling to reduce recurrence risk.",
     image: "/images/hero-1.jpg",
   },
   {
