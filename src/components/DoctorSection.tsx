@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Phone, MapPin, Clock, GraduationCap, Award, Stethoscope, Heart, ShieldCheck, MessageCircle, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import drBapatPortrait from "@assets/image_1776804738449.png";
 
 const WHATSAPP_LINK = "https://wa.me/919822032496?text=Hello%20Dr.%20Bapat%2C%20I%20would%20like%20to%20book%20an%20appointment.%20Please%20share%20available%20slots.";
 
@@ -94,9 +95,10 @@ const DoctorSection = () => {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/images/doctor-banner.jpg"
+                  src={drBapatPortrait}
                   alt="Dr. Milind Bapat - Urology & Andrology Expert"
                   className="w-full h-auto rounded-2xl"
+                  data-testid="img-doctor-portrait"
                 />
               </div>
             </motion.div>
