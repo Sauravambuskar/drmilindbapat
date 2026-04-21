@@ -49,9 +49,9 @@ const AboutSection = () => {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] bg-gradient-to-br from-navy to-primary p-3 sm:p-4">
+            <div className="max-w-sm mx-auto rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] bg-gradient-to-br from-navy to-primary p-1">
               <div className="rounded-xl overflow-hidden bg-white">
-                <div className="aspect-[3/4] w-full bg-gradient-to-b from-secondary to-card flex items-center justify-center overflow-hidden">
+                <div className="aspect-square w-full bg-gradient-to-b from-secondary to-card flex items-center justify-center overflow-hidden">
                   <img
                     src={drBapatImage}
                     alt="Dr. Milind Bapat - Best Urologist & Andrologist in Pune"
@@ -59,7 +59,7 @@ const AboutSection = () => {
                     data-testid="img-about-doctor"
                   />
                 </div>
-                <div className="bg-navy text-center p-5">
+                <div className="bg-navy text-center p-4">
                   <p className="text-primary-foreground font-display text-2xl font-bold" data-testid="text-doctor-name">Dr. Milind Bapat</p>
                   <p className="text-teal-glow text-sm font-medium mt-1" data-testid="text-doctor-degree">MS (Surgery) · DNB (Urology)</p>
                   <p className="text-primary-foreground/80 text-xs mt-1">Consultant Urologist & Andrologist</p>
