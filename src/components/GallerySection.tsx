@@ -7,7 +7,6 @@ const images = [
   { src: "/images/gallery-2.png", alt: "Advanced urology diagnostic equipment" },
   { src: "/images/gallery-3.jpg", alt: "Consultation room at TARA Clinic" },
   { src: "/images/gallery-4.jpg", alt: "Modern surgical operation theatre" },
-  { src: "/images/gallery-5.jpg", alt: "Patient care and recovery area" },
   { src: "/images/gallery-6.jpg", alt: "Dr. Bapat with medical team at clinic" },
   { src: "/images/gallery-7.jpg", alt: "Laser lithotripsy equipment for kidney stones" },
   { src: "/images/gallery-8.jpg", alt: "Jupiter Hospital urology department" },
@@ -39,7 +38,7 @@ const GallerySection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[180px] md:auto-rows-[220px]">
           {images.map((img, i) => (
             <motion.div
               key={img.src}
@@ -49,8 +48,7 @@ const GallerySection = () => {
               transition={{ delay: i * 0.04, duration: 0.4 }}
               onClick={() => setSelected(i)}
               className={`rounded-xl overflow-hidden group cursor-pointer relative ${
-                i === 0 ? "md:col-span-2 md:row-span-2" : 
-                i === 5 ? "md:col-span-2 lg:col-span-2 lg:row-span-2" : ""
+                i === 0 ? "col-span-2 row-span-2" : ""
               }`}
             >
               <img
