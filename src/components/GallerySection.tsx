@@ -48,7 +48,7 @@ const GallerySection = () => {
               transition={{ delay: i * 0.04, duration: 0.4 }}
               onClick={() => setSelected(i)}
               className={`rounded-xl overflow-hidden group cursor-pointer relative ${
-                i === 0 ? "col-span-2 row-span-2" : ""
+                i === 0 ? "col-span-2" : ""
               }`}
             >
               <img
