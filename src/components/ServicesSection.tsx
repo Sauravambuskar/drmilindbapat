@@ -90,9 +90,9 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-shadow group"
+              className="bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-shadow group flex flex-col h-full"
             >
-              <div className="relative h-44 overflow-hidden">
+              <div className="relative h-44 overflow-hidden flex-shrink-0">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -106,12 +106,12 @@ const ServicesSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="p-5">
+              <div className="p-5 flex flex-col flex-1">
                 <h3 className="font-display text-lg font-semibold text-foreground mb-2">{service.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
                   {service.description}
                 </p>
-                <Button variant="ghost" size="sm" className="text-primary hover:text-primary p-0 h-auto" asChild>
+                <Button variant="ghost" size="sm" className="text-primary hover:text-primary p-0 h-auto mt-auto self-start" asChild>
                   <a href={`${WHATSAPP_BASE}${encodeURIComponent(`Hello Dr. Bapat, I would like to book an appointment for ${service.title}. Please share available slots.`)}`} target="_blank" rel="noopener noreferrer" className="gap-2">
                     <MessageCircle className="w-4 h-4" />
                     Book Appointment
