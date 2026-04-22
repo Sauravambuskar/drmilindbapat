@@ -74,7 +74,15 @@ const ContactSection = () => {
               icon: Clock,
               title: "OPD Timings",
               detail: "OPD (TARA Clinic): Mon, Wed, Fri 12–4 PM",
-              sub: "Consultant: MJM Hospital, Ratna Memorial & Jupiter Hospital — By Appointment",
+              sub: (
+                <>
+                  Consultant: MJM Hospital, Ratna Memorial & Jupiter Hospital
+                  {" "}
+                  <span className="inline-block mt-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[11px] font-semibold uppercase tracking-wide border border-primary/20">
+                    By Appointment
+                  </span>
+                </>
+              ),
             },
           ].map((item, i) => (
             <motion.div
