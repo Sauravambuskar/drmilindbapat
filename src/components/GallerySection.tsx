@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import drBapatPortrait from "@assets/image_1776805160967.png";
 
 const images = [
   { src: "/images/gallery-1.jpg", alt: "Dr. Milind Bapat's urology clinic reception area" },
@@ -12,7 +11,6 @@ const images = [
   { src: "/images/gallery-6.jpg", alt: "Dr. Bapat with medical team at clinic" },
   { src: "/images/gallery-7.jpg", alt: "Laser lithotripsy equipment for kidney stones" },
   { src: "/images/gallery-8.jpg", alt: "Jupiter Hospital urology department" },
-  { src: drBapatPortrait, alt: "Dr. Milind Bapat - Medical conference and continuing education" },
 ];
 
 const GallerySection = () => {
