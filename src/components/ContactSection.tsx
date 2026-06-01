@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     q: "What are the consultation fees?",
-    a: "Consultation fees vary depending on the type of visit (new patient / follow-up). Please contact the clinic directly for the latest fee structure.",
+    a: "The consultation fee is ₹1,000. Fees for procedures, surgeries, or follow-up visits may vary. Please contact the clinic directly for details.",
   },
   {
     q: "Does Dr. Bapat perform surgeries?",
@@ -77,10 +77,14 @@ const ContactSection = () => {
               sub: (
                 <>
                   Consultant: MJM Hospital, Ratna Memorial & Jupiter Hospital
-                  {" "}
-                  <span className="inline-block mt-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[11px] font-semibold uppercase tracking-wide border border-primary/20">
-                    By Appointment
-                  </span>
+                  <div className="mt-2 flex flex-wrap justify-center gap-1.5">
+                    <span className="inline-block px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[11px] font-semibold uppercase tracking-wide border border-primary/20">
+                      By Appointment
+                    </span>
+                    <span className="inline-block px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 text-[11px] font-semibold uppercase tracking-wide border border-emerald-500/20">
+                      Fee: ₹1000
+                    </span>
+                  </div>
                 </>
               ),
             },
